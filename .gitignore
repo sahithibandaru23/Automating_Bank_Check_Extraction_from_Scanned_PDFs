@@ -1,5 +1,7 @@
-venv/
 __pycache__/
 *.pyc
+*.pdf
+uploaded_cheque.pdf
 extracted_data.csv
-extracted_data.xlsx
+cheque_images/*
+cheque_regions/*

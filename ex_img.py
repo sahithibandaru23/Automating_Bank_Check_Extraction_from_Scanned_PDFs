@@ -41,7 +41,7 @@ def parse_pdf(file_path, output_folder, fixed_width, fixed_height):
 
 # Example usage
 file_path = r"cheque24.pdf"
-output_folder = r"cheque_img"
+output_folder = r"cheque_images"
 fixed_width = 1000
 fixed_height = 600
 
