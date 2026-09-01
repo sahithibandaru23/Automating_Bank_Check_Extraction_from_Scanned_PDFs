@@ -2,7 +2,7 @@ import os
 import cv2
 
 # Define paths and regions of interest
-base_image_directory = r"cheque_img"
+base_image_directory = r"cheque_images"
 regions_of_interest = {
     'date': (754, 40, 970, 88),
     'payee': (70, 120, 760, 175),
@@ -10,7 +10,7 @@ regions_of_interest = {
     'amount_digits': (735, 225, 970, 290),
     'account_number': (115, 300, 320, 335)
 }
-regions_output_directory = r"cheque_reg"
+regions_output_directory = r"cheque_regions"
 
 # Function to extract regions of interest from check images
 def extract_interest_regions(base_image_directory, regions_of_interest, regions_output_directory):
