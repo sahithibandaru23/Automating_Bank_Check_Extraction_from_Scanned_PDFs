@@ -8,11 +8,16 @@ import pandas as pd
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 # Define the base directory path
-BASE_IMAGE_DIRECTORY = r"cheque_reg"
+BASE_IMAGE_DIRECTORY = r"cheque_regions"
 
 # Load the processor and model
 processor = TrOCRProcessor.from_pretrained('microsoft/trocr-large-stage1')
-model = VisionEncoderDecoderModel.from_pretrained('microsoft/trocr-large-stage1')
+model = VisionEncoderDecoderModel.from_pretrained(
+    'microsoft/trocr-large-stage1',
+    device_map=None
+)
+model.to("cpu")
+model.eval()
 
 def extract_text_from_image(image_path):
     """Extracts text from a given image using the TrOCR model."""

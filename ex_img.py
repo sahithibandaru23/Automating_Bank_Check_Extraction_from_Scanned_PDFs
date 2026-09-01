@@ -7,7 +7,7 @@ def parse_pdf(file_path, output_folder, fixed_width, fixed_height):
     # Create the output folder if it doesn't exist
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
-    
+
     # Open the PDF file
     pdf_document = fitz.open(file_path)
     num_pages = pdf_document.page_count
@@ -28,10 +28,10 @@ def parse_pdf(file_path, output_folder, fixed_width, fixed_height):
             try:
                 # Open the image stream with Pillow
                 image_pil = Image.open(io.BytesIO(image_bytes))
-                
+
                 # Resize the image
                 resized_image = image_pil.resize((fixed_width, fixed_height), Image.Resampling.LANCZOS)
-                
+
                 # Save the resized image
                 image_path = os.path.join(output_folder, f"page_{page_num + 1}_image{img_index + 1}.png")
                 resized_image.save(image_path)
